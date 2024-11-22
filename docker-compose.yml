@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=medusa
+      - POSTGRES_PASSWORD=medusa123
+      - POSTGRES_DB=medusa-my-medusa-store
+    ports:
+      - "5432:5432"  # Mengekspos PostgreSQL di port 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persisten data PostgreSQL
+    networks:
+      - medusa_network
+volumes:
+  postgres_data:
+
+# Definisikan jaringan untuk komunikasi antar container
+networks:
+  medusa_network:
+    driver: bridge
