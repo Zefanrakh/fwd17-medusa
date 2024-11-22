@@ -42,7 +42,7 @@ const ProductReviewWidget = ({ data }: DetailWidgetProps<AdminProduct>) => {
 };
 
 export const config = defineWidgetConfig({
-  zone: "product.details.before",
+  zone: "product.details.after",
 });
 
 export default ProductReviewWidget;
